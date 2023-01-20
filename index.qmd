@@ -1,0 +1,222 @@
+---
+title : "Analisis Pengaruh Ekspor Minyak Kelapa Sawit (CPO) Indonesia ke Negara tujuan India Terhadap Nilai Tukar Rupiah Periode 2012-2021"
+subtitle: "Metode Penelitian Politeknik APP Jakarta"
+author: "Aldo Sam Muhajir"
+date: 2023-01-20
+toc: true
+number-sections: true
+format:
+  html: default
+  docx: default
+editor: visual
+code-line-numbers: true
+---
+
+![.](poltekapp.jpg)
+
+## Pendahuluan
+
+### Latar belakang
+
+Indonesia merupakan negara produsen unggulan atau pertama yang mengekspor minyak kelapa sawit atau Crude Palm Oil (CPO) (Syamsulbahri, 1996). Crude Palm Oil (CPO) salah satu komoditas perkebunan ekspor unggulan yang mampu memberikan kontribusi dan sebagai salah satu penyumbang pendapatan devisa Indonesia dari ekspor tersebut. Produk olahan dari kelapa sawit yang kaya akan manfaat mempunyai peluang ekspor yang cukup besar di pasar internasional, selain diolah sebagai bahan baku industri minyak goreng, margarin, sabun dll. Salah satu perkembangan produk turunan minyak kelapa sawit (CPO) adalah bahan bakar minyak, yaitu biodesel yang menjadikannya CPO trending topic untuk kelangsungan energi di masa yang akan datang. Indonesia merupakan Negara penghasil minyak kelapa sawit (CPO) terbesar di dunia dengan rata-rata kontribusi produksi sebesar 44,46% dari total produksi CPO di dunia.
+
+Ekspor merupakan salah satu aktivitas perdagangan internasional yang mempunyai peranan penting bagi perekonomian suatu negara yang dapat menghasilkan devisa dan dapat digunakan untuk membiayai impor dan pembiyaan pembangunan sektor-sektor di dalam negeri. Proses ekspor pada biasanya merupakan aksi buat menghasilkan barang atau komoditas dari dalam negeri untuk memasukannnya ke negara lain melalu prosedur dan tata cara yang di tetapkan oleh pemerintah. Ekspor barang secara besar umumnya membutuhkan campur tangan dari bea cukai di Negara pengirim maupun penerima. Negara tujuan utama ekspor meliputi India, China, Pakistan, Spanyol dan Mesir. Tercatat India merupakan pangsa pasar terbesar ekspor minyak sawit nasional, yakni sebesar US\$ 3,11 milliar (11,96%) pada tahun 2021. Sebagai produsen minyak kelapa sawit terbesar di dunia, Indonesia mengekspor minyak kelapa sawit ke India terus mengalami pengingkatan pada tahun 2012-2021.
+
+Dalam melakukan kegiatan perdagangan internasional khususnya ekspor, yang menjadi acuan dalam penentuan tinggi rendahnya harga komoditas tersebut yaitu nilai tukar atau kurs, dimana kurs merupakan perbandingan antara harga mata uang suatu negara dengan negara lainnya. Sehingga ketika nilai mata uang mengalami kenaikan maka akan menguntungkan bagi negara pengekspor begitu pula sebaliknya. Penelitian ini bertujuan untuk mengetahui pengaruh nilai tukar rupiah terhadap nilai ekspor ke negara India dengan periode waktu tahun 2012-2021. Metode penelitian yang digunakan dalam penelitian ini adalah menggunakan metode regresi univariat atau Ordinary Least Square (OLS) dengan menggunakan data time series (2012-2021).
+
+| Tahun         | 2012    | 2013    | 2014    | 2015    | 2016    | 2017    | 2018    | 2019    | 2020    | 2021    |
+|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|
+| Ekspor (Ribu Ton)  | 5,264.0 | 5,752.4 | 4,920.4 | 5,746.0 | 5,424.6 | 7,325.1 | 6,346.2 | 4,576.6 | 4,568.7 | 3,088.7 |
+| Ekspor (Juta US$) | 4,846.5 | 4,375.4 | 3,694.3 | 3,224.3 | 3,449.5 | 4,901.2 | 3,561.5 | 2,252.0 | 2,987.3 | 3,337.8 |
+
+: **Tabel 1: Ekspor Minyak Kelapa sawit Indonesia negara tujuan India periode 2012-2021:**
+
+*Sumber: Badan Pusat Statistik (BPS)*
+
+Industri perkebunan dan pengolahan kelapa sawit adalah industri kunci bagi perekonomian Indonesia. Ekspor minyak kelapa sawit adalah penghasil devisa yang penting dan industri ini memberikan kesempatan kerja bagi jutaan orang Indonesia. Berdasarkan latar belakang tersebut penelitian ini bertujuan untuk menganalisis perkembangan nilai ekspor minyak kelapa sawit Indonesia tahun 2012 -- 2021, pengaruh harga ekspor dan nilai tukar terhadap nilai ekspor minyak kelapa sawit Indonesia tahun 2012 - 2021.
+
+### Ruang lingkup
+
+Penelitian ini membahas mengenai pengaruh nilai tukar terhadap ekspor komoditi unggulan Indonesia yaitu minyak kelapa sawit dengan menggunakan data dengan subjek nilai ekspor minyak kelapa sawit (CPO) dari negara Indonesia ke negara India. Data tersebut diambil dari Badan Pusat Statistik (BPS) dengan kurun waktu 9 tahun terakhir yaitu (2012-2021). Data tersebut kemudian dibandingkan dengan nilai tukar rupiah.
+
+### Rumusan masalah
+
+Berdasarkan uraian latar belakang masalah diatas, maka terdapat beberapa indikator yang menjadi rumusan masalah dalam penelitian ini, Adapun rumusan masalah tersebut adalah sebagai berikut :
+
+1.  Apakah ekspor minyak kelapa sawit atau Crude Palm Oil (CPO) ke negara India dapat mempengaruhi terhadap nilai tukar rupiah tahun 2012 -2021?
+
+2.  Bagaimana perkembangan ekspor minyak kelapa sawit atau Crude Palm Oil (CPO) ke negara India dari tahun 2012-2021?
+
+### Tujuan dan Manfaat penelitian
+
+1.  Untuk mengetahui seberapa besar pengaruh ekspor minyak kelapa sawit atau Crude Palm Oil (CPO) ke negara India dapat mempengaruhi nilai tukar rupiah.
+
+2.  Untuk mengetahui perkembangan ekspor minyak kelapa sawit atau Crude Palm Oil (CPO) ke negara India periode 2012-2021.
+
+### Package
+
+Ini tidak wajib ada di packages yang digunakan antara lain sebagai berikut:
+
+```{r}
+#| warning: false
+#| echo: true
+library(tidyverse)
+library(readxl)
+library(WDI) # tambahkan library lain jika diperlukan
+```
+
+## Studi pustaka
+
+### Teori Perdagangan Internasional
+
+Perdagangan internasional adalah bentuk transaksi perdagangan yang terjadi antara pelaku-pelaku ekonomi antara dua negara atau lebih, baik transaksi berupa barang maupun transaksi berupa jasa. Adapun pelaku ekonomi tersebut dapat beragam, seperti penduduk yang terdiri dari warga negara biasa, perusahaan impor, perusahaan ekspor, perusahaan industri, perusahaan negara, departemen pemerintah, atau pun individu (Sobri: 2000). Kegiatan perdagangan internasional secara umum meliputi kegiatan ekspor dan impor.
+
+Menurut (Murni: 2006), Kegiatan ekspor adalah suatu kegiatan ekonomi menjual produk dalam negeri kepasar diluar negeri. Sedangkan menurut (Sasono: 2013), Ekspor adalah kegiatan menjual produk dari satu negara ke negara lain melewati batas terluar wilayah kepabeanan suatu negara, dengan tujuan mendapatkan devisa yang sangat dibutuhkan negara, menciptakan lapangan kerja bagi pasar tenaga kerja domestik, mendapatkan pemasukan bea keluar dan pajak lainnya, serta menjaga keseimbangan antara arus barang dan arus uang beredar di dalam negeri.
+
+Menurut (Murni: 2006), Menyatakan bahwa impor merupakan kegiatan ekonomi membeli produk luar negeri untuk keperluan atau dipasarkan didalam negeri. Sedangkan menurut (Amir: 2008), kegiatan impor adalah upaya seorang pengusaha untuk memenuhi kebutuhannya atas suatu barang yang kurang tersedia di dalam negeri, sehingga terpaksa membelinya dari negara lain, serta membayarnya dengan valuta asing.
+
+### Teori Nilai Tukar
+
+Nilai tukar valuta asing adalah harga satu satuan mata uang dalam satuan mata uang lain. Nilai tukar valuta asing ditentukan dalam pasar valuta asing yaitu pasar tempat berbagai mata uang yang berbeda diperdagangkan (Samuelson & Nordhaus, 2004). Sedangkan menurut (Salvatore: 2016), nilai tukar atau exchange rate didefinisikan sebagai harga mata uang luar negeri dalam satuan harga mata uang domestik. Nilai tukar memiliki peranan yang penting dalam perdagangan internasional karena nilai tukar digunakan untuk membandingkan harga barang dan jasa yang terdapat di berbagai negara. Perubahan terhadap nilai tukar disebut sebagai depresiasi dan apresiasi. Nilai tukar dikatakan mengalami depresiasi apabila harga mata uang domestik melemah terhadap mata uang asing sedangkan nilai tukar dikatakan mengalami apresiasi apabila harga mata uang domestik menguat terhadap mata uang asing.
+
+### Pengaruh Ekspor Terhadap Nilai Tukar
+
+Berdasarkan teori pendekatan perdagangan yang dikemukakan oleh (Salvatore: 2016), kegiatan ekspor dapat mempengaruhi nilai tukar mata uang. Kegiatan ekspor yang meningkat akan mengakibatkan naiknya permintaan terhadap mata uang negara pengekspor. Kenaikan permintaan terhadap mata uang pengekspor menyebabkan mata uang dalam negeri akan menguat dan mata uang luar negeri akan melemah.
+
+## Metode Penelitian
+
+### Data
+
+Metode analisis pada penelitian ini menggunakan metode dengan mengambil data sekunder. Data pada analisis penelitian ini dicatat secara sistematis yang berbentuk data runtun waktu (*time series data*) dari tahun 2012-2021 berdasarkan nilai ekspor minyak kelapa sawit Indonesia ke India dan nilai tukar rupiah terhadap nilai mata uang Rupee India. Adapun sumber data yang diperoleh berasal dari Badan Pusat Statistik (BPS).
+
+|  Tahun  |  Nilai Ekspor (Rupee)  |  Nilai Tukar (IDR)  |
+|:---------:|:------------------------:|:---------------------:|
+|  2012   |         395467         |      73548303       |
+|  2013   |         357026         |      66399101       |
+|  2014   |         301449         |      56063034       |
+|  2015   |         263098         |      48930525       |
+|  2016   |         281474         |      52348059       |
+|  2017   |         399931         |      74378405       |
+|  2018   |         290613         |      54047721       |
+|  2019   |         183760         |      34175338       |
+|  2020   |         243759         |      45333920       |
+|  2021   |         272359         |      50652950       |
+
+: **Tabel 2: Data nilai ekspor minyak kelapa sawit ke negara India dan nilai tukar rupiah.**
+
+*Sumber : Badan Pusat Statistik (BPS)*
+
+#### Hasil Plot
+
+```{r}
+setwd("C:/Users/Aldo Sam Muhajir/Documents/KULIAH/Metopel quarto")
+dat<-read_excel("latihan.xlsx")
+library(readxl)
+reg1<-lm(Y~X,data=dat)
+dat$u<-resid(reg1)
+plot(dat$Y,dat$X,ylab="Nilai Tukar",xlab="Nilai Ekspor")
+abline(h=0)
+```
+
+#### Hasil Plot Dengan Error
+
+```{r}
+setwd("C:/Users/Aldo Sam Muhajir/Documents/KULIAH/Metopel quarto")
+dat<-read_excel("latihan.xlsx")
+library(readxl)
+dat$u<-resid(reg1)
+plot(dat$Y,dat$u,xlab="nilai Ekspor",ylab="error")
+abline(h=0)
+```
+
+### Metode analisis
+
+Metode Kuantitatif digunakan untuk analisis yang dilakukan dengan perhitungan angka-angka yang mempengaruhi variabel X sebagai nilai ekspor minyak kelapa sawit Indonesia ke India dan variabel Y sebagai nilai tukar rupiah terhadap nilai ekspor minyak kelapa sawit ke negara India. Selanjutnya Metode yang digunakan adalah metode regresi univariat atau Ordinary Least Square (OLS) dengan 1 variabel independen yang digunakan untuk menganalisis pengaruh nilai tukar rupiah terhadap nilai ekspor ke negara India. Penelitian ini bermaksud untuk mencari hubungan antara nilai tukar sebagai variabel Y dan nilai ekspor sebagai variabel X. spesifikasi yang dilakukan adalah :
+
+$$
+y_{t}=\beta_0 + \beta_1 x_t+\mu_t
+$$ Dimana:
+
+$y_t$ = Nilai Tukar Rupee (India) terhadap mata uang negara lain
+
+$\beta_0$ = Koefisien konstanta
+
+$\beta_1$ = Parameter
+
+$x_t$ = Nilai ekspor
+
+$\mu_t$ = error term
+
+## Pembahasan
+
+### Pembahasan masalah
+
+|   Tahun   |  Nilai Ekspor CPO ke India (Juta US\$)  |  Perkembangan (%)  |
+|:-----------------:|:-------------------------:|:------------------------:|
+|   2012    |                 4 846.5                 |         -          |
+|   2013    |                 4 375.4                 |       -9.72        |
+|   2014   |                 3 694.3                 |       -15.57       |
+|   2015    |                 3 224.3                 |       -12.72       |
+|   2016    |                 3 449.5                 |        6.98        |
+|   2017    |                 4 901.2                 |       42.08        |
+|   2018    |                 3 561.5                 |       -27.33       |
+|   2019    |                 2 252.0                 |       -36.77       |
+|   2020    |                 2 987.3                 |       32.65        |
+|   2021    |                 3 337.8                 |       11.73        |
+| Rata-rata |                    -                    |       -0.87%       |
+
+: **Tabel 3: Perkembangan nilai ekspor minyak kelapa sawit di Indonesia ke India periode 2012-2021**
+
+*Sumber: Badan Pusat Statistik (BPS)*
+
+Tabel 3 memberikan perkembangan nilai ekspor minyak kelapa sawit di Indonesia selama periode tahun 2013-2021. Berdasarkan tabel berikut terlihat bahwa dari tahun 2012 ke 2013 mengalami penurunan sebesar -9,72% dari US\$ 4 846.5 pada tahun 2012 menjadi US\$ 4 357.4 pada tahun 2013. Perkembangan nilai ekspor minyak kelapa sawit terus menurun , masing-masing sebesar -15.57% pada tahun 2014, pada tahun 2015 menurun -12.72%, kemudian pada tahun 2016 terjadi peningkatan sebesar 6.98% dan di tahun 2017 juga terjadi peningkatan sebesar 42.08%. Setelah itu terjadi penurunan kembali di tahun 2018 sebesar -27.33%, pada tahun 2019 menurun -36.77%, dan terjadi peningkatan di tahun 2020 sebesar 32.65%. Pada tahun 2021 perkembangan nilai ekspor minyak kelapa sawit berakhir dengan peningkatan sebesar 11.73%.
+
+### Analisis masalah
+
+**Hasil pengaruh jumlah ekspor terhadap nilai tukar menggunakan metode regresi univariat. Hasil Regresinya ditunjukan sebagai berikut :**
+
+```{r}
+library(readxl)
+dat<-read_excel("latihan.xlsx")
+reg1<-lm(Y~X,data=dat)
+summary(reg1)
+```
+
+Hasil diatas merupakan hasil estimasi OLS dengan menggunakan model regresi univariat. Hasil regresi tersebut digunakan untuk mengetahui hubungan antara variabel X sebagai nilai ekspor minyak kelapa sawit Indonesia ke India dan variabel Y sebagai nilai tukar rupiah terhadap mata uang negara India.
+
+Hasil estimasi didapatkan nilai F-hitung sebesar 0.06e+11 dengan probabilitas <2.2e-16. Koefisien Determinasi (R2) sebesar 1 artinya kontribusi nilai ekspor dan nilai tukar minyak kelapa sawit terhadap nilai ekspor minyak kelapa sawit Indonesia negara tujuan India sebesar 100 persen.
+
+Selanjutnya Interpretasi terhadap masing-masing variabel dalam persamaan diberikan sebagai berikut :
+
+1.  *Variabel X (Nilai Ekspor)*
+
+T-hitung sebesar 7.450e-01 dengan probabilitas 0.477 menunjukan berpengaruh signifikan positif terhadap nilai ekspor minyak kelapa sawit Indonesia negara tujuan India. Dengan koefisien regresi sebesar 5.446e+01, maka peningkatan harga ekspor minyak kelapa sawit Indonesia negara tujuan India sebesar 1 persen menyebabkan peningkatan nilai ekspor minyak kelapa sawit Indonesia negara tujuan India sebesar 5.446e+01 persen.
+
+2.  *Variabel Y (Nilai Tukar)*
+
+T-Hitung sebesar 7.784e+05 dengan probabilitas <2e-16 menunjukan bahwa nilai tukar tidak berpengaruh signifikan terhadap nilai ekspor minyak kelapa sawit Indonesia negara tujuan India.
+
+## Kesimpulan & Saran
+
+### Kesimpulan 
+
+1. Berdasarkan hasil penelitian ini, dapat disimpulkan bahwa jumlah ekspor berpengaruh signifikan terhadap nilai tukar. 
+
+2. Rata-rata perkembangan nilai ekspor minyak sawit Indonesia negara tujuan India selama periode tahun 2012-2021 adalah -0.87 persen.
+
+### Saran 
+
+Saran yang bisa penulis berikan kepada pemerintah melalui berbagai kebijakannya hendaknya dapat menjaga kestabilan harga serta berupaya selalu meningkatkan kualitas serta kuantitas ekspor minyak kelapa sawit atau Crude Palm Oil (CPO).
+
+## Referensi
+
+Ewaldo, E. (2015). Analisis ekspor minyak kelapa sawit di Indonesia. E-Journal Perdagangan Industri Dan Moneter, 3(1), Article 1. https://doi.org/10.22437/pim.v3i1.3988
+
+Badan Pusat Statistik. (n.d.). Retrieved January 20, 2023, from https://www.bps.go.id/statictable/2014/09/08/1026/ekspor-minyak-kelapa-sawit-menurut-negara-tujuan-utama-2012-2021.html
+
+Taufiq, M., & Natasah, N. A. (2019). Analisis Pengaruh Nilai Tukar Terhadap Ekspor Komoditas Unggulan Indonesia. JDEP (Jurnal Dinamika Ekonomi Pembangunan), 2(1), Article 1. https://doi.org/10.33005/jdep.v2i1.85
+
+Dewi, N. PENGARUH EKSPOR, IMPOR, INFLASI, DAN PERTUMBUHAN EKONOMI TERHADAP NILAI TUKAR DI INDONESIA. Jurnal Ekonomi Daerah (JEDA), 8(2).
+
+Wahyuningsih, S. N., Budiarto, B., & Juarini, J. (2020). Analisis daya saing dan trend ekspor CPO Indonesia di Pasar India dan China. Jurnal Dinamika Sosial Ekonomi, 20(1), 1-13.
+
